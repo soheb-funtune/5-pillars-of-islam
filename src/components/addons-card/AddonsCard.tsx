@@ -19,7 +19,7 @@ const AddonsCard = () => {
   return (
     <div>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
-        <h4> AddonsCard</h4>
+        <h4> Addons Card</h4>
         <div className="flex flex-col gap-2">
           {["CPA", "llpaid"]?.map(
             (
@@ -33,7 +33,7 @@ const AddonsCard = () => {
                   type="checkbox"
                   {...register(`addons.${i}`)}
                 />
-                <label className="" htmlFor={item}>
+                <label className="flex items-center" htmlFor={item}>
                   {" "}
                   {item}
                 </label>
@@ -41,7 +41,7 @@ const AddonsCard = () => {
             )
           )}
         </div>
-        <button type="submit" className="bg-green-300 px-4 py-2">
+        <button type="submit" className="bg-green-300 px-4 py-2 text-white">
           Submit
         </button>
       </form>
