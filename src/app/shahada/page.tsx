@@ -11,12 +11,13 @@ const page = () => {
           width={100}
           height={200}
           style={{ width: "auto" }}
-          className="h-[200px] md:h-[300px]   "
+          className="h-[200px] md:h-[300px]   object-contain"
         />
       </div>
       <div className="w-[70%]">
         <h1 className="text-2xl font-bold">Shahada</h1>
-        <p className="text-sm mt-3 ">
+
+        <p className="text-sm mt-3 md:w-[80%] ">
           The belief that "There is no god but God, and Muhammad is the
           Messenger of God" is central to Islam. This phrase, written in Arabic,
           is often prominently featured in architecture and a range of objects,

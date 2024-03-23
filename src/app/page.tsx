@@ -5,21 +5,17 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 relative ">
-      {/* <div
-        style={{
-          backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEEbkeYvQut__nZNloWDZcleuxYcgUl_E683rP7mIoG65IwmVk5bp-6ROqjtld2zqK3MU&usqp=CAU)`,
-        }}
-        className="bg-no-repeat bg-right-bottom bg-cover w-52 h-52 absolute bottom-0 right-0"
-      ></div> */}
       <IslamCard
         title={`Profession of Faith (shahada)`}
         description={`The belief that "There is no god but God, and Muhammad is the Messenger of God".`}
         bgUrl="https://t3.ftcdn.net/jpg/05/43/40/22/240_F_543402289_FhTPkRzXjMwz73GbRMeAiTZx22pqnf1S.jpg"
+        redirectionUrl={"/shahada"}
       />
       <IslamCard
         title={`Prayer (salat)`}
         description={`Muslims pray facing Mecca five times a day: at dawn, noon, mid-afternoon, sunset, and after dark. Prayer includes a recitation of the opening chapter (sura) of the Qur'an`}
         bgUrl="https://img.freepik.com/premium-vector/simple-flat-vector-illustration-muslim-family-praying-together_24381-1910.jpg"
+        redirectionUrl={"/namaz"}
       />
       <IslamCard
         title="Fasting (Roza)"
