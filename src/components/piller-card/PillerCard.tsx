@@ -1,5 +1,7 @@
 // components/IslamCard.js
 
+import Link from "next/link";
+
 const IslamCard = ({
   title,
   description,
@@ -10,7 +12,8 @@ const IslamCard = ({
   bgUrl: string;
 }) => {
   return (
-    <div
+    <Link
+      href={"/shahada"}
       style={{ backgroundImage: `url(${bgUrl})` }}
       className=" max-h-[250px]  bg-white  rounded-3xl overflow-hidden shadow-lg  bg-no-repeat bg-right-bottom  bg-16 pb-20"
     >
@@ -18,7 +21,7 @@ const IslamCard = ({
         <div className="font-bold text-[17px] mb-2">{title}</div>
         <p className="text-gray-700 text-[15px]">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
