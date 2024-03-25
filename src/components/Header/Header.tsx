@@ -14,6 +14,12 @@ const Header = () => {
         />
         <nav className="flex items-center gap-5">
           <Link
+            href="/"
+            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+          >
+            Home
+          </Link>
+          <Link
             href="/hadees"
             className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
           >
