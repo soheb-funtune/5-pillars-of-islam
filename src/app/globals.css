@@ -83,3 +83,17 @@ input[type="checkbox"]:checked + label::before {
   color: rgb(38, 228, 21);
   background: rgb(233, 232, 232);
 }
+
+.link-tag {
+  transition: all ease 0.3s;
+}
+
+.link-tag:hover {
+  transform: scale(1.02);
+}
+
+.explain-para::first-letter {
+  padding: 4px 8px;
+  background: greenyellow;
+  text-decoration: underline;
+}

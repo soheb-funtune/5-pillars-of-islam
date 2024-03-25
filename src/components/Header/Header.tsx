@@ -1,6 +1,6 @@
-// components/Header.js
 import Image from "next/image";
 import Link from "next/link";
+import Language from "../language-select/Language";
 
 const Header = () => {
   return (
@@ -12,13 +12,20 @@ const Header = () => {
           width={100}
           height={50}
         />
-        <nav className="flex items-center gap-2">
-          <Link href="/hadees" className="focus:text-red-500">
-            <span className="text-[13px]">Hadees</span>
+        <nav className="flex items-center gap-5">
+          <Link
+            href="/hadees"
+            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+          >
+            Hadees
           </Link>
-          <Link href="/hadees" className="focus:text-red-500">
-            <span className="text-[13px]">Quran</span>
+          <Link
+            href="/hadees"
+            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+          >
+            Quran
           </Link>
+          <Language />
         </nav>
       </div>
     </header>

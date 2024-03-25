@@ -6,19 +6,24 @@ const HadeesCard = ({
   title,
   hadeeths_count,
   id,
+  category,
 }: {
   title: any;
   hadeeths_count: any;
   id: any;
+  category?: any;
 }) => {
   return (
-    <Link
-      href={`/hadees/${id}`}
-      className="shadow-sm rounded-lg px-3 py-2 text-[13px]"
-    >
+    <div className="link-tag relative shadow-md rounded-lg px-5 pt-5 pb-6 text-[13px]">
       <p>{hadeeths_count}</p>
       <p>{title}</p>
-    </Link>
+      <Link
+        href={`/hadees/category/${id}`}
+        className="absolute right-3 bottom-2 text-red-500 underline"
+      >
+        In Detail
+      </Link>
+    </div>
   );
 };
 
