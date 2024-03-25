@@ -1,5 +1,6 @@
 // components/Header.js
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -11,7 +12,14 @@ const Header = () => {
           width={100}
           height={50}
         />
-        <nav></nav>
+        <nav className="flex items-center gap-2">
+          <Link href="/hadees" className="focus:text-red-500">
+            <span className="text-[13px]">Hadees</span>
+          </Link>
+          <Link href="/hadees" className="focus:text-red-500">
+            <span className="text-[13px]">Quran</span>
+          </Link>
+        </nav>
       </div>
     </header>
   );

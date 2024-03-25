@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "photo-cdn.urdupoint.com",
       },
+      {
+        protocol: "https",
+        hostname: "media.istockphoto.com",
+      },
     ],
   },
 };

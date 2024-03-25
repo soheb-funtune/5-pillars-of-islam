@@ -72,3 +72,14 @@ input[type="checkbox"]:checked + label::before {
   box-shadow: inset 0 2px 5px rgba(209, 47, 47, 0.25);
   margin-right: 0.5em;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(38, 228, 21);
+  background: rgb(233, 232, 232);
+}
+
+::selection {
+  color: rgb(38, 228, 21);
+  background: rgb(233, 232, 232);
+}
