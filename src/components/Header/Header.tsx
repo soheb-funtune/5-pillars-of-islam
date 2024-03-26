@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Language from "../language-select/Language";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
+  console.log({ pathname });
   return (
     <header className="text-gray-800 bg-white py-4 px-4 ">
       <div className="container  flex justify-between items-center">
@@ -26,12 +30,12 @@ const Header = () => {
             Hadees
           </Link>
           <Link
-            href="/hadees"
+            href="/quran"
             className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
           >
             Quran
           </Link>
-          <Language />
+          {pathname.includes("/hadees") && <Language />}
         </nav>
       </div>
     </header>
