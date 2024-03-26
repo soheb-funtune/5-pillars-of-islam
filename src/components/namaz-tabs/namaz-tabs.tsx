@@ -8,9 +8,12 @@ import { Sunnat, Farz, Nafeel } from "./sunnat-link";
 import Image from "next/image";
 
 export default function NamazTabs() {
-  const [value, setValue] = React.useState("farz");
+  const [value, setValue] = React.useState<string>("farz");
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (
+    event: React.FormEvent<HTMLInputElement>,
+    newValue: string
+  ) => {
     setValue(newValue);
     console.log({ newValue });
   };

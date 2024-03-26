@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 
 const page = () => {
   const { category } = useParams<{ category: string }>();
-  const [hadees, setHadees] = useState([]);
+  const [hadees, setHadees] = useState<any>([]);
 
   useEffect(() => {
     const lang = localStorage.getItem("lang");

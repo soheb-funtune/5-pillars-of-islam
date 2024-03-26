@@ -1,5 +1,3 @@
-// components/IslamCard.js
-
 import Link from "next/link";
 
 const IslamCard = ({

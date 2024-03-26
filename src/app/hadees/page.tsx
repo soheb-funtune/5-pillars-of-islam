@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
-  const [hadees, setHadees] = useState([]);
+  const [hadees, setHadees] = useState<any>([]);
 
   useEffect(() => {
     const lang = localStorage.getItem("lang");
