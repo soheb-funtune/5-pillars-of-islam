@@ -15,23 +15,24 @@ const Header = () => {
           alt="Picture of the author"
           width={100}
           height={50}
+          className="w-80px sm:w-[100px]"
         />
-        <nav className="flex items-center gap-5">
+        <nav className="flex items-center gap-[5px] sm:gap-5">
           <Link
             href="/"
-            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+            className="undeline-transition focus:text-red-500 drop-shadow-md text-[13px] pb-1 relative  before:absolute before:w-[5px] focus:before:w-full before:h-[2px] before:bg-red-500  before:bottom-0 before:left-0 before:rounded-[40px]"
           >
             Home
           </Link>
           <Link
             href="/hadees"
-            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+            className="undeline-transition focus:text-red-500 drop-shadow-md text-[13px] pb-1 relative  before:absolute before:w-[5px] focus:before:w-full before:h-[2px] before:bg-red-500  before:bottom-0 before:left-0 before:rounded-[40px]"
           >
             Hadees
           </Link>
           <Link
             href="/quran"
-            className="focus:text-red-500 drop-shadow-md text-[13px] relative pl-3 focus:before:absolute focus:before:w-1 focus:before:h-full focus:before:bg-red-500 focus:before:top-0 focus:before:bottom-0 focus:before:left-0 focus:before:rounded-[40px]"
+            className="undeline-transition focus:text-red-500 drop-shadow-md text-[13px] pb-1 relative  before:absolute before:w-[5px] focus:before:w-full before:h-[2px] before:bg-red-500  before:bottom-0 before:left-0 before:rounded-[40px]"
           >
             Quran
           </Link>

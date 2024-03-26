@@ -98,3 +98,7 @@ input[type="checkbox"]:checked + label::before {
   background: greenyellow;
   text-decoration: underline;
 }
+
+.undeline-transition::before {
+  transition: width ease-in-out 0.7s;
+}

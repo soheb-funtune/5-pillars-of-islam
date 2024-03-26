@@ -29,7 +29,7 @@ const Language = () => {
         window.location.reload();
       }}
       value={selected}
-      className="text-[13px] w-content"
+      className="text-[13px] w-content max-w-[65px] sm:max-w-[85px] "
     >
       <option value={"@"}>Select...</option>
       {langList?.map((item: any, i: any) => (
