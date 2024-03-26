@@ -1,11 +1,12 @@
 "use client";
 /* eslint-disable */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 
 const page = () => {
   const { id } = useParams<{ id: string }>();
   const [hadees, setHadees] = useState<any>();
+  const [speakText, setSpeakText] = useState<string>();
 
   useEffect(() => {
     const lang = localStorage.getItem("lang");
@@ -21,15 +22,20 @@ const page = () => {
       });
   }, [id]);
 
-  const handleSpeech = (text: string) => {
-    const msg = new SpeechSynthesisUtterance();
-    console.log("called !");
-    let lang = localStorage.getItem("lang");
-    msg.text = text || "Good Morning";
-    msg.lang = "en-US";
-    // msg.lang = `${lang}-${lang?.toUpperCase()}` || "en-US";
-    window.speechSynthesis.speak(msg);
-  };
+  useEffect(() => {
+    if (speakText) {
+      const msg = new SpeechSynthesisUtterance();
+      console.log("called !");
+      const lang = localStorage.getItem("lang");
+      msg.text = speakText || "Not Working for selected Language";
+      msg.lang = "en-US";
+      msg.lang = `${lang}` || "en-US";
+      window.speechSynthesis.speak(msg);
+    }
+    return () => {
+      window.speechSynthesis.cancel();
+    };
+  }, [speakText]);
 
   return (
     <div className="p-5 lg:m-auto lg:max-w-[800px] cursor-pointer text-black">
@@ -39,7 +45,7 @@ const page = () => {
           {hadees?.hadeeth}{" "}
           <button
             className="absolute right-0 -top-5"
-            onClick={() => handleSpeech(hadees?.hadeeth)}
+            onClick={() => setSpeakText(hadees?.hadeeth)}
           >
             🔊
           </button>
@@ -51,7 +57,7 @@ const page = () => {
           {hadees?.explanation}
           <button
             className="absolute right-0 -top-5"
-            onClick={() => handleSpeech(hadees?.explanation)}
+            onClick={() => setSpeakText(hadees?.explanation)}
           >
             🔊
           </button>
