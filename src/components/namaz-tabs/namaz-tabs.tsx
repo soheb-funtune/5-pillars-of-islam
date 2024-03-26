@@ -119,6 +119,7 @@ export default function NamazTabs() {
                 src={
                   "https://photo-cdn.urdupoint.com/show_img_new/content/2021/800x400/pic_e8ba7_1621502162.jpg._2"
                 }
+                alt="some"
                 width={500}
                 height={300}
               />
