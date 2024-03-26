@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const Language = () => {
   const [langList, setLangList] = useState<any>([]);
-  const [selected, setSelected] = useState<String>();
+  const [selected, setSelected] = useState<string>();
 
   useEffect(() => {
     const langFetch = async () => {
