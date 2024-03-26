@@ -21,7 +21,7 @@ const page = () => {
   }, [id]);
 
   return (
-    <div className="p-5 lg:m-auto lg:max-w-[800px] cursor-pointer ">
+    <div className="p-5 lg:m-auto lg:max-w-[800px] cursor-pointer text-black">
       {/* Single Hadees */}
       <div className="flex flex-col gap-3 text-[13px] ">
         <p>{hadees?.hadeeth}</p>
