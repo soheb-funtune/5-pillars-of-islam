@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
@@ -20,16 +21,40 @@ const page = () => {
       });
   }, [id]);
 
+  const handleSpeech = (text: string) => {
+    const msg = new SpeechSynthesisUtterance();
+    console.log("called !");
+    let lang = localStorage.getItem("lang");
+    msg.text = text || "Good Morning";
+    msg.lang = "en-US";
+    // msg.lang = `${lang}-${lang?.toUpperCase()}` || "en-US";
+    window.speechSynthesis.speak(msg);
+  };
+
   return (
     <div className="p-5 lg:m-auto lg:max-w-[800px] cursor-pointer text-black">
       {/* Single Hadees */}
       <div className="flex flex-col gap-3 text-[13px] ">
-        <p>{hadees?.hadeeth}</p>
-        <p>
+        <p className="relative">
+          {hadees?.hadeeth}{" "}
+          <button
+            className="absolute right-0 -top-5"
+            onClick={() => handleSpeech(hadees?.hadeeth)}
+          >
+            🔊
+          </button>
+        </p>
+        <p className="relative">
           <span className="bg-green-300 px-2 py-1 text-white underline">
             Explaination :
           </span>{" "}
           {hadees?.explanation}
+          <button
+            className="absolute right-0 -top-5"
+            onClick={() => handleSpeech(hadees?.explanation)}
+          >
+            🔊
+          </button>
         </p>
         <p className="flex justify-between">
           <span className="underline">{hadees?.grade}</span>
