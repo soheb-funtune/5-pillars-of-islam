@@ -10,19 +10,16 @@ import Image from "next/image";
 export default function NamazTabs() {
   const [value, setValue] = React.useState<string>("farz");
 
-  const handleChange = (
-    event: React.FormEvent<HTMLInputElement>,
-    newValue: string
-  ) => {
-    setValue(newValue);
-    console.log({ newValue });
+  const handleChange = (event: any) => {
+    // setValue(newValue);
+    console.log(event.target.value);
   };
 
   return (
     <Box sx={{ width: "100%" }}>
       <Tabs
         value={value}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e)}
         textColor="secondary"
         indicatorColor="secondary"
         aria-label="secondary tabs example"
