@@ -25,8 +25,8 @@ const page = () => {
   useEffect(() => {
     if (speakText) {
       const msg = new SpeechSynthesisUtterance();
-      console.log("called !");
       const lang = localStorage.getItem("lang");
+      console.log("called !", lang);
       msg.text = speakText || "Not Working for selected Language";
       msg.lang = "en-US";
       msg.lang = `${lang}` || "en-US";
@@ -44,6 +44,12 @@ const page = () => {
         <p className="relative">
           {hadees?.hadeeth}{" "}
           <button
+            className="absolute right-5 -top-5"
+            onClick={() => setSpeakText("")}
+          >
+            🔈
+          </button>
+          <button
             className="absolute right-0 -top-5"
             onClick={() => setSpeakText(hadees?.hadeeth)}
           >
@@ -55,6 +61,12 @@ const page = () => {
             Explaination :
           </span>{" "}
           {hadees?.explanation}
+          <button
+            className="absolute right-5 -top-5"
+            onClick={() => setSpeakText("")}
+          >
+            🔈
+          </button>
           <button
             className="absolute right-0 -top-5"
             onClick={() => setSpeakText(hadees?.explanation)}
