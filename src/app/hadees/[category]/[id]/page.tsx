@@ -2,6 +2,8 @@
 /* eslint-disable */
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import { HiMiniSpeakerWave } from "react-icons/hi2";
+import { HiMiniSpeakerXMark } from "react-icons/hi2";
 
 const page = () => {
   const { id } = useParams<{ id: string }>();
@@ -47,13 +49,13 @@ const page = () => {
             className="absolute right-5 -top-5"
             onClick={() => setSpeakText("")}
           >
-            🔈
+            <HiMiniSpeakerXMark className="text-xl" />
           </button>
           <button
             className="absolute right-0 -top-5"
             onClick={() => setSpeakText(hadees?.hadeeth)}
           >
-            🔊
+            <HiMiniSpeakerWave className="text-xl" />
           </button>
         </p>
         <p className="relative">
@@ -65,13 +67,13 @@ const page = () => {
             className="absolute right-5 -top-5"
             onClick={() => setSpeakText("")}
           >
-            🔈
+            <HiMiniSpeakerXMark className="text-xl" />
           </button>
           <button
             className="absolute right-0 -top-5"
             onClick={() => setSpeakText(hadees?.explanation)}
           >
-            🔊
+            <HiMiniSpeakerWave className="text-xl" />
           </button>
         </p>
         <p className="flex justify-between">

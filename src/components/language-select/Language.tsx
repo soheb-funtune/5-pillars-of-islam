@@ -11,7 +11,9 @@ const Language = () => {
         (res) => res.json()
       );
       console.log({ res });
-      setLangList(res);
+      setLangList(
+        res?.filter((item: any) => item?.code == "en" || item?.code == "hi")
+      );
     };
     langFetch();
   }, []);
