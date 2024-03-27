@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 const page = () => {
   const { singleQuran } = useParams<any>();
-  const [quranList, setQuranList] = useState<any>([]);
+  const [surahList, setSurahList] = useState<any>([]);
   useEffect(() => {
     const fetchQuranData = async () => {
       try {
@@ -18,8 +18,8 @@ const page = () => {
             throw new Error("Failed to fetch Quran data");
           }
           const data = await response.json();
-          console.log(data);
-          setQuranList(data);
+          console.log(data?.data?.surahs);
+          setSurahList(data?.data?.surahs);
         }
       } catch (error) {
         console.error("Error fetching Quran data:", error);
@@ -39,17 +39,22 @@ const page = () => {
         Hadees Category
       </h3>
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 ">
-        {/* {quranList?.map(({ identifier, englishName, language, name }: any) => (
+        {surahList?.map(({ number, englishName, name, ayahs }: any) => (
           <Link
-            href={`/quran/${identifier}`}
+            key={number + "surah"}
+            href={`/quran/${number}`}
             className="link-tag flex flex-col gap-3 relative  cursor-pointer shadow-md rounded-lg px-3 pt-7 pb-5 text-[13px]"
           >
             <p>
-              {name} | {identifier}
+              {name} | {englishName}
             </p>
-            <small className="">{englishName}</small>
+            <div>
+              {ayahs?.map(({ number, text }: any) => (
+                <small key={number}>{text}</small>
+              ))}
+            </div>
           </Link>
-        ))} */}
+        ))}
       </div>
     </div>
   );
